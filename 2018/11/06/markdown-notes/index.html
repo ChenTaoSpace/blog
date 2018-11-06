@@ -1,0 +1,38 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>Mark down 语法 -- 菜鸟入门教程 | winter is coming</title><link rel="stylesheet" type="text/css" href="/blog//css/normalize.css"><link rel="stylesheet" type="text/css" href="/blog//css/highlight.css"><link rel="stylesheet" type="text/css" href="/blog//css/very-simple.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css"><link rel="Shortcut Icon" type="image/x-icon" href="/blog/favicon.ico"></head><body><!-- include the sidebar--><!-- include ./includes/sidebar.jade-->
+
+<!-- Blog title and subtitle--><header><div class="container header"><a id="logo" href="/blog/." class="title">winter is coming</a><span class="subtitle"></span><label id="toggle-menu" for="menu" onclick=""><i class="fa fa-bars"></i></label></div></header><!-- use checkbox hack for toggle nav-bar on small screens--><input id="menu" type="checkbox"><!-- Navigation Links--><nav id="nav"><div class="container"><a href="/blog/" class="sidebar-nav-item">Home</a><a href="/blog/archives" class="sidebar-nav-item">Archives</a></div></nav><!--#header-margin-bar--><!-- gallery that comes before the header--><div class="wrapper"><div class="container post-header"><h1>Mark down 语法 -- 菜鸟入门教程</h1></div></div><div class="wrapper"><div class="container meta"><div class="post-time">2018-11-06</div><div class="post-categories"><a class="post-category-link" href="/blog/categories/mark-down/">mark down</a></div><div class="post-tags"><a class="post-tag-link" href="/blog/tags/demo/">demo</a></div></div></div><article><div class="container post"><p>从用到的语法记录，慢慢整理吧~~所有语法皆用 显示效果+语法代码+讲解</p>
+<h2 id="说到文章怎么能没有标题呢？"><a href="#说到文章怎么能没有标题呢？" class="headerlink" title="说到文章怎么能没有标题呢？"></a>说到文章怎么能没有标题呢？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## 说到文章怎么能没有标题呢？</span><br></pre></td></tr></table></figure>
+<p>两个#代表二级标题与html h1-h6级标题对应，html基本姿势了~不知道的同学回去复习噢😀<br>❗❗❗##后面需要跟一个空格</p>
+<h3 id="此处想插入一个图片，来一个痞老板"><a href="#此处想插入一个图片，来一个痞老板" class="headerlink" title="此处想插入一个图片，来一个痞老板"></a>此处想插入一个图片，来一个痞老板</h3><p><img src="https://i.imgur.com/kVmlJT7.jpg" alt="" title="你把鼠标放图片上就看见我了"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](https://i.imgur.com/kVmlJT7.jpg &quot;你把鼠标放图片上就看见我了&quot;)</span><br></pre></td></tr></table></figure></p>
+<p>这种图片显示方式不能控制大小，位置，不是我需要的，往下看另一种👇</p>
+<h4 id="缩小的痞老板和标题"><a href="#缩小的痞老板和标题" class="headerlink" title="缩小的痞老板和标题"></a>缩小的痞老板和标题</h4><p><div align="center"><br>    <img src="https://i.imgur.com/kVmlJT7.jpg" height="20%" width="200"><br>大家好我是痞子😏<br></div><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div align=&quot;center&quot;&gt;</span><br><span class="line">	&lt;img src=&quot;https://i.imgur.com/kVmlJT7.jpg&quot;  height=&quot;20%&quot; width=&quot;200&quot;&gt;</span><br><span class="line">大家好我是痞子</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>这种方式可以控制图片显示的位置，以及大小</p>
+<blockquote>
+<p>🔷 引用标记是这么个效果</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;引用标记是这么个效果</span><br></pre></td></tr></table></figure>
+<p>总用标题来当导航是不是感觉太丑了点，你需要它 &gt;（引用标记）<br>标记和你的文字之间要空一行，不然就连一起了😂</p>
+</div><!-- comment system--><div class="container"><hr><div class="comment"></div><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+#<script src="//cdn.jsdelivr.net/npm/valine@1.1.6/dist/Valine.min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script type="text/javascript">
+var leancloud_appid = 'LN8Ppgqc0OK9XW9RfgRwKrD6-gzGzoHsz';
+var leancloud_appkey = 'khsJeEWITdMhUnsskrj3xmyy';
+var valine_url = 'http://yoursite.com/2018/11/06/markdown-notes/';
+var valine_notify = false;
+var valine_verify = false;
+var valine_placeholder = 'say someting';
+new Valine({
+         av: AV, // source from av-min.js
+         el: '.comment' ,
+         notify: valine_notify,
+         verify: valine_verify,
+         app_id: leancloud_appid,
+         app_key: leancloud_appkey,
+         placeholder: valine_placeholder,
+         path: valine_url
+     });
+</script></div></article><footer id="footer"><div class="container"><div class="bar"><div class="social"><a href="/atom.xml" target="_blank"><i class="fa fa-rss"></i></a></div><div class="footer">© 2018 <a href="/" rel="nofollow">会飞的马赛克</a><!--= '. Powered by '--><!--a(rel='nofollow', target='_blank', href='https://hexo.io') Hexo--><!--= '. Theme '--><!--a(target='_blank', href='https://github.com/lotabout/very-simple') very-simple--><!--|.--></div></div></div></footer><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.css"><script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script><script src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js"></script><script>$(document).ready(function() {
+    $(".fancybox").fancybox();
+});
+</script></body></html>
