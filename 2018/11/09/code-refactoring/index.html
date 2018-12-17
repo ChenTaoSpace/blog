@@ -1,0 +1,114 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="描述一下天气"><title>重构-改善既有代码的设计 - 坏味道 | Loadign----</title><link rel="stylesheet" type="text/css" href="/css/normalize.css"><link rel="stylesheet" type="text/css" href="/css/highlight.css"><link rel="stylesheet" type="text/css" href="/css/very-simple.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><!-- include the sidebar--><!-- include ./includes/sidebar.jade-->
+
+<!-- Blog title and subtitle--><header><div class="container header"><a id="logo" href="/." class="title">Loadign----</a><span class="subtitle">completion</span><label id="toggle-menu" for="menu" onclick=""><i class="fa fa-bars"></i></label></div></header><!-- use checkbox hack for toggle nav-bar on small screens--><input id="menu" type="checkbox"><!-- Navigation Links--><nav id="nav"><div class="container"><a href="/" class="sidebar-nav-item active">时间戳</a><a href="/archives" class="sidebar-nav-item">归档</a></div></nav><!--#header-margin-bar-->
+<!-- gallery that comes before the header--><div class="wrapper"><div class="container post-header"><h1>重构-改善既有代码的设计 - 坏味道</h1></div></div><div class="wrapper"><div class="container meta"><div class="post-time">2018-11-09</div><div class="post-categories"><a class="post-category-link" href="/categories/book/">book</a></div><div class="post-tags"><a class="post-tag-link" href="/tags/重构/">重构</a></div></div></div><article><div class="container post"><p><img src="https://i.imgur.com/VkJIHei.jpg" alt=""></p>
+<h2 id="代码里散发出来的坏味道，你闻到了吗？"><a href="#代码里散发出来的坏味道，你闻到了吗？" class="headerlink" title="代码里散发出来的坏味道，你闻到了吗？"></a>代码里散发出来的坏味道，你闻到了吗？</h2><blockquote>
+<p>1.重复代码。 </p>
+</blockquote>
+<blockquote>
+<p>2.过长函数</p>
+</blockquote>
+<p>分解：有注释的地方，循环，通过易理解的函数名来封装</p>
+<blockquote>
+<p>3.过大的类</p>
+</blockquote>
+<blockquote>
+<p>4.过长的参数列</p>
+</blockquote>
+<p>用对象传递</p>
+<blockquote>
+<p>5.发散式变化</p>
+</blockquote>
+<p>一个类受多种变化的影响。针对某一外界变化的所有相应修改，都只应该发生在单一类中，而这个新类的所有内容都应该反应此变化。</p>
+<blockquote>
+<p>6.散弹式修改</p>
+</blockquote>
+<p>（一种变化引发多个类响应修改）。把所有需要修改的代码放进同一个类</p>
+<blockquote>
+<p>7.依恋情结</p>
+</blockquote>
+<p>（函数对某个类的兴趣高过对自己所处类的兴趣，最通常的焦点便是数据）。方法归属：判断那个类拥有最多被此函数使用的数据，然后就把这个函数和那些数据摆在一起</p>
+<blockquote>
+<p>8.数据泥团</p>
+</blockquote>
+<p>（两个类中相同的字段，许多函数中相同的参数）。这些总是一起出现的数据应该拥有属于他们自己的对象</p>
+<blockquote>
+<p>9.基本类型偏执。</p>
+</blockquote>
+<p>运用小对象，将本来单独存在的数据值替换为对象。</p>
+<blockquote>
+<p>10.Switch statements。</p>
+</blockquote>
+<p> 考虑用多态来替换。或者使用Map的方式</p>
+<blockquote>
+<p>11.平行继承体系</p>
+</blockquote>
+<p>（为某个类添加一个子类，必须也为另一个类相应增加一个子类。某个继承体系的类名称前缀和另一个继承体系的类名称前缀完全相同）。让一个继承体系的实例引用另一个继承体系的实例。</p>
+<blockquote>
+<p>12.Lazy Class（冗余类）</p>
+</blockquote>
+<p>如果一个类的所得不值其身价，它就应该消失。</p>
+<blockquote>
+<p>13.Speculative Generality（夸夸其谈未来性）</p>
+</blockquote>
+<p>不要过多考虑将来所做。</p>
+<blockquote>
+<p>14.Temporary Field（令人迷惑的暂时字段）</p>
+</blockquote>
+<p>某个仅为特定情况而设的变量及相关代码抽取为一个类。</p>
+<blockquote>
+<p>15.过度耦合的消息链。</p>
+</blockquote>
+<blockquote>
+<p>16.Middle Man（中间人）<br>减少没有用的委托</p>
+</blockquote>
+<blockquote>
+<p>17.Inappropriate Intimact（狎昵关系）</p>
+</blockquote>
+<p>把两者共同点提炼到一个安全地点，</p>
+<blockquote>
+<p>18.Alternative Classes Different Interfaces（异曲同工的类）</p>
+</blockquote>
+<p>如果两个函数做同一件事情，却有着不同的签名运用move method。如果重复引入代码才能完成则考虑抽取为父类</p>
+<blockquote>
+<p>19.Incomplete Library Class（不完美的库类）</p>
+</blockquote>
+<p>引入外来方法或本地扩展</p>
+<blockquote>
+<p>20.Data Class（纯稚的数据类）</p>
+</blockquote>
+<blockquote>
+<p>21.Refused Bedquest（被拒绝的遗赠）</p>
+</blockquote>
+<blockquote>
+<p>22.Comments（过多的注释）</p>
+</blockquote>
+</div><!-- comment system--><div class="container"><hr><div class="comment"></div><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+#<script src="//cdn.jsdelivr.net/npm/valine@1.1.6/dist/Valine.min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script type="text/javascript">
+var leancloud_appid = 'LN8Ppgqc0OK9XW9RfgRwKrD6-gzGzoHsz';
+var leancloud_appkey = 'khsJeEWITdMhUnsskrj3xmyy';
+var valine_url = 'https://chentaospace.github.io/blog/2018/11/09/code-refactoring/';
+var valine_notify = false;
+var valine_verify = false;
+var valine_placeholder = 'say someting';
+new Valine({
+         av: AV, // source from av-min.js
+         el: '.comment' ,
+         notify: valine_notify,
+         verify: valine_verify,
+         app_id: leancloud_appid,
+         app_key: leancloud_appkey,
+         placeholder: valine_placeholder,
+         path: valine_url
+     });
+</script></div></article><footer id="footer"><div class="container"><div class="bar"><div class="social"><a href="mailto:420045399@qq.com" target="_blank"><i class="fa fa-envelope-o"></i></a><a href="https://github.com/ChenTaoSpace" target="_blank"><i class="fa fa-github"></i></a><a href="/atom.xml" target="_blank"><i class="fa fa-rss"></i></a></div><div class="footer">© 2018 <a href="/" rel="nofollow">猪想飞</a>. Powered by <a rel="nofollow" target="_blank" href="https://hexo.io">Hexo</a><!--= '. Theme '--><!--a(target='_blank', href='https://github.com/lotabout/very-simple') very-simple--><!--|.--></div></div></div></footer><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.css"><script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script><script src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js"></script><script>$(document).ready(function() {
+    $(".fancybox").fancybox();
+});
+</script></body><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+e.src='//www.google-analytics.com/analytics.js';
+r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+ga('create','UA-128963495-1');ga('send','pageview');</script></html>

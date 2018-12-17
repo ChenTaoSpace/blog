@@ -1,0 +1,98 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="描述一下天气"><title>Git 指令全解析 | Loadign----</title><link rel="stylesheet" type="text/css" href="/css/normalize.css"><link rel="stylesheet" type="text/css" href="/css/highlight.css"><link rel="stylesheet" type="text/css" href="/css/very-simple.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><!-- include the sidebar--><!-- include ./includes/sidebar.jade-->
+
+<!-- Blog title and subtitle--><header><div class="container header"><a id="logo" href="/." class="title">Loadign----</a><span class="subtitle">completion</span><label id="toggle-menu" for="menu" onclick=""><i class="fa fa-bars"></i></label></div></header><!-- use checkbox hack for toggle nav-bar on small screens--><input id="menu" type="checkbox"><!-- Navigation Links--><nav id="nav"><div class="container"><a href="/" class="sidebar-nav-item active">时间戳</a><a href="/archives" class="sidebar-nav-item">归档</a></div></nav><!--#header-margin-bar-->
+<!-- gallery that comes before the header--><div class="wrapper"><div class="container post-header"><h1>Git 指令全解析</h1></div></div><div class="wrapper"><div class="container meta"><div class="post-time">2018-11-09</div><div class="post-categories"><a class="post-category-link" href="/categories/git/">git</a></div><div class="post-tags"><a class="post-tag-link" href="/tags/命令/">命令</a></div></div></div><article><div class="container post"><h3 id="指令后的名字为分支名"><a href="#指令后的名字为分支名" class="headerlink" title="-指令后的名字为分支名"></a>-指令后的名字为分支名</h3><blockquote>
+<p>查看分支列表</p>
+</blockquote>
+<p>git branch</p>
+<blockquote>
+<p>查看分支以及提交信息</p>
+</blockquote>
+<p>git branch -v</p>
+<blockquote>
+<p>已经（或尚未）与当前分支合并的分支</p>
+</blockquote>
+<p>git branch –merge/–no-merged</p>
+<blockquote>
+<p>创建</p>
+</blockquote>
+<p>git checkout -b iss53</p>
+<blockquote>
+<p>删除</p>
+</blockquote>
+<p>git branch -d hotfix</p>
+<blockquote>
+<p>合并</p>
+</blockquote>
+<p>git merge hotfix</p>
+<blockquote>
+<p>切换</p>
+</blockquote>
+<p>git checkout master</p>
+<blockquote>
+<p>创建并切换</p>
+</blockquote>
+<p>git checkout -b ‘hotfix’</p>
+<blockquote>
+<p>提交</p>
+</blockquote>
+<p>git commit -a -m ‘made other changes’</p>
+<blockquote>
+<p>冲突显示</p>
+</blockquote>
+<p>git status</p>
+<blockquote>
+<p>标记冲突解决</p>
+</blockquote>
+<p>git add</p>
+<blockquote>
+<p>冲突工具</p>
+</blockquote>
+<p>git mergetool</p>
+<blockquote>
+<p>同步服务器数据</p>
+</blockquote>
+<p>git fetch origin</p>
+<blockquote>
+<p>添加远程分支（当前项目）</p>
+</blockquote>
+<p>git remote add 别名 地址</p>
+<blockquote>
+<p>推送本地分支</p>
+</blockquote>
+<p>git push (远程仓库名) (分支名)</p>
+<blockquote>
+<p>推送到远程指定分支</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin serverfix:awesomebranch</span><br></pre></td></tr></table></figure>
+<p>值得注意的是，在 fetch 操作下载好新的远程分支之后，你仍然无法在本地编辑该远程仓库中的分支。换句话说，在本例中，你不会有一个新的 serverfix 分支，有的只是一个你无法移动的 origin/serverfix 指针。<br>如果要把该远程分支的内容合并到当前分支，可以运行 git merge origin/serverfix。如果想要一份自己的 serverfix 来开发，可以在远程分支的基础上分化出一个新的分支来：<br>git checkout -b serverfix origin/serverfix</p>
+<p>这会切换到新建的 serverfix 本地分支，其内容同远程分支 origin/serverfix 一致，这样你就可以在里面继续开发了</p>
+</div><!-- comment system--><div class="container"><hr><div class="comment"></div><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+#<script src="//cdn.jsdelivr.net/npm/valine@1.1.6/dist/Valine.min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script type="text/javascript">
+var leancloud_appid = 'LN8Ppgqc0OK9XW9RfgRwKrD6-gzGzoHsz';
+var leancloud_appkey = 'khsJeEWITdMhUnsskrj3xmyy';
+var valine_url = 'https://chentaospace.github.io/blog/2018/11/09/git-command/';
+var valine_notify = false;
+var valine_verify = false;
+var valine_placeholder = 'say someting';
+new Valine({
+         av: AV, // source from av-min.js
+         el: '.comment' ,
+         notify: valine_notify,
+         verify: valine_verify,
+         app_id: leancloud_appid,
+         app_key: leancloud_appkey,
+         placeholder: valine_placeholder,
+         path: valine_url
+     });
+</script></div></article><footer id="footer"><div class="container"><div class="bar"><div class="social"><a href="mailto:420045399@qq.com" target="_blank"><i class="fa fa-envelope-o"></i></a><a href="https://github.com/ChenTaoSpace" target="_blank"><i class="fa fa-github"></i></a><a href="/atom.xml" target="_blank"><i class="fa fa-rss"></i></a></div><div class="footer">© 2018 <a href="/" rel="nofollow">猪想飞</a>. Powered by <a rel="nofollow" target="_blank" href="https://hexo.io">Hexo</a><!--= '. Theme '--><!--a(target='_blank', href='https://github.com/lotabout/very-simple') very-simple--><!--|.--></div></div></div></footer><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.css"><script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script><script src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js"></script><script>$(document).ready(function() {
+    $(".fancybox").fancybox();
+});
+</script></body><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+e.src='//www.google-analytics.com/analytics.js';
+r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+ga('create','UA-128963495-1');ga('send','pageview');</script></html>
